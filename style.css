@@ -46,4 +46,11 @@ img {
   width: 50%;
   margin: 0 auto;
   background-color: red;
+  text-align: center;
+}
+
+.float-test{
+  float: center;
+  background-color: red;
+  border: 3px black solid;
 }
