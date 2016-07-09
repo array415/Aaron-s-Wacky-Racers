@@ -1,0 +1,35 @@
+.road  {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  border-bottom: dashed 3px white;
+  z-index: 1;
+  clear: left;
+
+}
+
+.track{
+  height: 110px;
+  width: 110px;
+
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.playerNames {
+  background-color: blue;
+  height: 400px;
+}
+
+
+.inputField{
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  margin-left: 12%;
+}
