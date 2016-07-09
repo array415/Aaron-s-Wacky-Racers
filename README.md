@@ -1,4 +1,4 @@
-# Aaron-s-Wacky-Racers
+# Aaron's Wacky Racers
 
 This is currently a basic attempt at a racing game.
 
