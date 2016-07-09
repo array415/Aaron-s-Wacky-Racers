@@ -13,44 +13,21 @@
   height: 110px;
   width: 110px;
 
-
 }
 
-.cityImage{
-  width: 100%;
-  height: 650px;
-  background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-169564.jpg");
-  background-size: cover;
-  position: sticky;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-.playerNames {
-  background-color: blue;
-  height: 400px;
-}
-
-
-.inputField{
-  height: 400px;
-  width: 400px;
-  background-color: red;
-  margin-left: 12%;
-}
-
-.inner{
-  width: 50%;
-  margin: 0 auto;
-  background-color: red;
-  text-align: center;
-}
-
-.float-test{
+  float-test{
   float: center;
   background-color: red;
   border: 3px black solid;
+}
+
+.avatarOne{
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+.avatarTwo{
+   height: 100px;
+   width: 100px;
 }
