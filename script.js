@@ -1,51 +1,58 @@
-
 $(document).on('ready', function(){
   console.log('ready');
 
+
+  var playerOne = new Create();
+  var playerTwo = new Create();
+
+
   $( window ).keypress(function(event) {
     if(event.which == 112){
-      movePlayerOne();
-  $( ".playerOneMovement" ).animate({
-    'margin-left': '+=3%'
+
+      $( ".playerOneMovement" ).animate({
+        'margin-left': '+=3%'
+      },
+
+      200,
+
+      function() {
+        playerOne.increase();
+        if(playerOne.moves === 3){
+          console.log('boo');
+        }
+      });
+    }
 
 
-  }, 200, function() {
-    // Animation complete.
   });
-}
+
+  $(window).keypress(function(event){
+    if(event.which == 113){
+
+      $( ".playerTwoMovement" ).animate({
+        'margin-left': '+=3%'
+      },
+
+      200,
+
+      function() {
+        playerTwo.increase();
+        if(playerTwo.moves === 3){
+          console.log('yay');
+        }
+      });
+    }
+  });
+
+
+
 });
 
-$(window).keypress(function(e){
-  if(e.which == 113){
-    movePlayerTwo();
-    $( ".playerTwoMovement" ).animate({
-      'margin-left': '+=50px'
 
+function Create(){
+  this.moves = 0;
+  this.increase = function(){
+    this.moves++;
+  };
 
-    }, 200, function() {
-      // Animation complete.
-    });
-  }
-});
-
-
-
-});
-var playerOne = 0;
-var playerTwo = 0; 
-
-function movePlayerOne () {
-   playerOne++;
-   if(playerOne === 25){
-       alert('Player One Wins!');
-   }
-
-}
-
-
-function movePlayerTwo(){
-   playerTwo++;
-  if(playerTwo === 25){
-    alert('Player Two Wins!');
-  }
 }
