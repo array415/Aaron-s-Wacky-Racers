@@ -31,13 +31,12 @@ $(window).keypress(function(e){
 
 
 });
-var playerOne = ['x', null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null];
-var playerTwo = ['o', null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null];
+var playerOne = 0;
+var playerTwo = 0; 
 
 function movePlayerOne () {
-   playerOne.pop();
-   playerOne.unshift(null);
-   if(playerOne[16] === "x"){
+   playerOne++;
+   if(playerOne === 25){
        alert('Player One Wins!');
    }
 
@@ -45,9 +44,8 @@ function movePlayerOne () {
 
 
 function movePlayerTwo(){
-  playerTwo.pop();
-  playerTwo.unshift(null);
-  if(playerTwo[16] === "o"){
+   playerTwo++;
+  if(playerTwo === 25){
     alert('Player Two Wins!');
   }
 }
