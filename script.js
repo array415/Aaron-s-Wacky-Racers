@@ -8,7 +8,7 @@ $(document).on('ready', function(){
 
 
 
-  $( 'body' ).on('keypress',function(event) {
+  $('body').on('keypress',function(event) {
     if(event.which == 112){
       playerOne.name = $('.frank').val();
       console.log(playerOne);
@@ -30,16 +30,17 @@ $(document).on('ready', function(){
 
     });
 
-    $(window).keypress(function(event){
+    $('body').keypress(function(event){
       if(event.which == 113){
          playerTwo.increase();
-         console.log(playerTwo.winner());
+         playerTwo.whoWon();
+         console.log(playerTwo.winner);
          console.log(playerTwo.move);
         $( ".trackTwo" ).animate(
           {'margin-left': '+='+playerTwo.move+'%'},
           300 );
         }
-        $(".trackOne").clearQueue();
+        $(".trackTwo").clearQueue();
       });
 
 
@@ -50,9 +51,12 @@ $(document).on('ready', function(){
     function Player(){
       this.move = 0;
       this.name = null;
-      this.winner =
+      this.winner = 0;
+      this.whoWon = function(){
+        this.winner += this.move;
+      };
       this.increase = function(){
-        this.move = Math.floor(Math.random()*10+1);
+        this.move = Math.floor(Math.random()*20+1);
       };
 
     }
