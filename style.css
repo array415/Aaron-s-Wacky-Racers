@@ -43,15 +43,18 @@
   z-index: 1;
   height: 600px;
   width: 100%;
-  float: left;
+  clear: left;
+
 }
 
 .row{
 
+ height: 150px;
+
 }
 
 .whiteBox{
-  float: left;
+  float: right;
   background-color: white;
   height: 200px;
   width: 200px;
@@ -74,4 +77,13 @@ body{
   width: 100%;
   float: left;
 
+}
+
+
+.testTwo{
+  float: left;
+}
+
+.inner{
+  margin: 15px;
 }

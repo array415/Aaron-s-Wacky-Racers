@@ -1,41 +1,41 @@
 $(document).on('ready', function(){
   console.log('ready');
 
-
   var playerOne = new PlayerObj();
   var playerTwo = new PlayerObj();
 
-  $('.floatTest').hide();
+  $('.announceWinner').hide();
 
   $('body').on('keypress',function(event) {
     if(event.which == 112){
       playerOne.condensedWinCheck();
-      console.log(playerOne.move);
 
       $( ".trackOne" ).animate(
         {'margin-left': '+='+playerOne.move+'%'},
         600);
 
-      if(playerOne.winner >= 100){
-        $('.announce').html("<h1>"+ playerOne.name + " " + "Wins!" + "</h1>");
-        playerOne.reset();
-        $('.floatTest').show();
-       }
+        if(playerOne.winner >= 100){
+          $('.announce').html("<h1>"+ playerOne.name + " " + "Wins!" + "</h1>");
+          $('.announce').animate({'margin-left' : '80%'},
+          9000);
+          playerOne.reset();
+          $('.announceWinner').show();
+        }
       }
 
-   $(".trackOne").clearQueue();
+      $(".trackOne").clearQueue();
 
-  });
+    });
 
-  $('body').keypress(function(event){
-    if(event.which == 113){
-      playerTwo.condensedWinCheck();
-      $( ".trackTwo" ).animate(
-        {'margin-left': '+='+playerTwo.move+'%'},
-        600 );
-     }
+    $('body').keypress(function(event){
+      if(event.which == 113){
+        playerTwo.condensedWinCheck();
+        $( ".trackTwo" ).animate(
+          {'margin-left': '+='+playerTwo.move+'%'},
+          600 );
+        }
         $(".trackTwo").clearQueue();
-  });
+      });
 
 
 
