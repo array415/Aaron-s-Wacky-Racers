@@ -16,7 +16,7 @@ $(document).on('ready', function(){
 
         if(playerOne.winner >= 100){
           $('.announce').html("<h1>"+ playerOne.name + " " + "Wins!" + "</h1>");
-          $('.announce').animate({'margin-left' : '80%'},
+          $('.announce').animate({'margin-left' : '70%'},
           9000);
           playerOne.reset();
           $('.announceWinner').show();
@@ -37,9 +37,11 @@ $(document).on('ready', function(){
         $(".trackTwo").clearQueue();
       });
 
-
+    $('.avatar').on('click', function(){
 
     });
+
+});
 
 
     function PlayerObj(){

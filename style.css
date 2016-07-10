@@ -15,6 +15,7 @@
   height: 100px;
   width: 100px;
   margin-top: 3%;
+  margin-right: 12px;
   background-color: black;
 }
 
@@ -43,13 +44,14 @@
   z-index: 1;
   height: 600px;
   width: 100%;
-  clear: left;
+  position:relative;
 
 }
 
 .row{
 
- height: 150px;
+ height: 90px;
+
 
 }
 
@@ -71,19 +73,20 @@ body{
 }
 
 
-.floatTest{
+.testTwo{
   background-color: red;
-  height: 70px;
+  height: 30px;
   width: 100%;
   float: left;
 
 }
 
 
-.testTwo{
-  float: left;
-}
-
 .inner{
   margin: 15px;
+}
+
+
+.reset{
+  margin-left: 0%;
 }
