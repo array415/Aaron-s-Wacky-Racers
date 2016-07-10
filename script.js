@@ -10,18 +10,19 @@ $(document).on('ready', function(){
 
   $('body').on('keypress',function(event) {
     if(event.which == 112){
-      playerOne.name = $('.frank').val();
-      console.log(playerOne);
+      playerOne.name = $('.firstName').val();
+      playerOne.increase();
+      playerOne.whoWon();
       $( ".trackOne" ).animate(
-        {'margin-left': '+=3%'},
-        150,
+        {'margin-left': '+='+playerOne.move+'%'},
+        600,
         function complete() {
 
         });
 
         playerOne.increase();
-        if(playerOne.moves === 25){
-          console.log(playerOne.playerName + " " + "Wins!");
+        if(playerOne.winner >= 90){
+          console.log(playerOne.name + " " + "Wins!");
         }
 
       }
@@ -34,11 +35,9 @@ $(document).on('ready', function(){
       if(event.which == 113){
          playerTwo.increase();
          playerTwo.whoWon();
-         console.log(playerTwo.winner);
-         console.log(playerTwo.move);
         $( ".trackTwo" ).animate(
           {'margin-left': '+='+playerTwo.move+'%'},
-          300 );
+          600 );
         }
         $(".trackTwo").clearQueue();
       });
