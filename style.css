@@ -15,11 +15,12 @@
 
 }
 
-  float-test{
+.float-test{
   float: center;
   background-color: red;
   border: 3px black solid;
 }
+
 
 .avatarOne{
   display: block;
@@ -30,4 +31,24 @@
 .avatarTwo{
    height: 100px;
    width: 100px;
+}
+
+.resize{
+  width: 100%;
+  height: 100%;
+}
+
+.col-md-11{
+  background-color: lightblue;
+
+}
+
+.car  {
+  margin-top: 17%;
+  margin-left: -3%;
+}
+
+body{
+  background: grey;
+
 }
