@@ -2,60 +2,68 @@ $(document).on('ready', function(){
   console.log('ready');
 
 
-  var playerOne = new Player();
-  var playerTwo = new Player();
+  var playerOne = new PlayerObj();
+  var playerTwo = new PlayerObj();
 
-
-
+  $('.floatTest').hide();
 
   $('body').on('keypress',function(event) {
     if(event.which == 112){
-      playerOne.name = $('.firstName').val();
-      playerOne.increase();
-      playerOne.whoWon();
+      playerOne.condensedWinCheck();
+      console.log(playerOne.move);
+
       $( ".trackOne" ).animate(
         {'margin-left': '+='+playerOne.move+'%'},
-        600,
-        function complete() {
+        600);
 
-        });
-
-        playerOne.increase();
-        if(playerOne.winner >= 90){
-          console.log(playerOne.name + " " + "Wins!");
-        }
-
+      if(playerOne.winner >= 100){
+        $('.announce').html("<h1>"+ playerOne.name + " " + "Wins!" + "</h1>");
+        playerOne.reset();
+        $('.floatTest').show();
+       }
       }
 
-      $(".trackOne").clearQueue();
+   $(".trackOne").clearQueue();
 
-    });
+  });
 
-    $('body').keypress(function(event){
-      if(event.which == 113){
-         playerTwo.increase();
-         playerTwo.whoWon();
-        $( ".trackTwo" ).animate(
-          {'margin-left': '+='+playerTwo.move+'%'},
-          600 );
-        }
+  $('body').keypress(function(event){
+    if(event.which == 113){
+      playerTwo.condensedWinCheck();
+      $( ".trackTwo" ).animate(
+        {'margin-left': '+='+playerTwo.move+'%'},
+        600 );
+     }
         $(".trackTwo").clearQueue();
-      });
+  });
 
 
 
     });
 
 
-    function Player(){
+    function PlayerObj(){
       this.move = 0;
       this.name = null;
       this.winner = 0;
+
       this.whoWon = function(){
         this.winner += this.move;
       };
-      this.increase = function(){
+
+      this.randomMove = function(){
         this.move = Math.floor(Math.random()*20+1);
+      };
+
+      this.reset = function(){
+        this.move = 0;
+        this.winner = 0;
+      };
+
+      this.condensedWinCheck = function(){
+        this.randomMove();
+        this.whoWon();
+        this.name = $('.firstName').val();
       };
 
     }
