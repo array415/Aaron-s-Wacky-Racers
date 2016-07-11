@@ -1,16 +1,26 @@
 $(document).on('ready', function(){
-  console.log('ready');
 
   var playerOne = new PlayerObj();
   var playerTwo = new PlayerObj();
 
   $('.announceWinner').hide();
 
+  function $resetButton() {
+      $('.trackOne').css('margin-left', '0');
+      $('.trackTwo').css('margin-left', '0');
+      $('.announce').css('margin-left', '0');
+      playerOne.reset();
+      playerTwo.reset();
+      $('.announceWinner').hide();
+      $('.playerName').show();
+  }
+
+
   $('body').on('keypress',function(event) {
     if(event.which == 112){
       playerOne.condensedWinCheck();
       playerOne.name = $('.playerOne').val();
-      $( ".trackOne" ).animate(
+      $( '.trackOne' ).animate(
         {'margin-left': '+='+playerOne.move+'%'},
         600);
 
@@ -18,8 +28,6 @@ $(document).on('ready', function(){
           $('.announce').html("<h1>"+ playerOne.name + " " + "Wins!" + "</h1>");
           $('.announce').animate({'margin-left' : '70%'},
           9000);
-          event.preventDefault();
-          playerOne.reset();
           $('.announceWinner').show();
         }
       }
@@ -30,10 +38,18 @@ $(document).on('ready', function(){
       if(event.which == 113){
         playerTwo.condensedWinCheck();
         playerTwo.name = $('.playerTwo').val();
-        $( ".trackTwo" ).animate(
+        $( '.trackTwo' ).animate(
           {'margin-left': '+='+playerTwo.move+'%'},
           600 );
         }
+
+        if(playerTwo.winner >= 90){
+          $('.announce').html("<h1>"+ playerTwo.name + " " + "Wins!" + "</h1>");
+          $('.announce').animate({'margin-left' : '70%'},
+          9000);
+          $('.announceWinner').show();
+        }
+
       });
 
     $('.psuedoSubmit').on('click', function(){
@@ -41,12 +57,7 @@ $(document).on('ready', function(){
     });
 
     $('.avatar').on('click', function(){
-      $('.trackOne').css('margin-left', '0');
-      $('.trackTwo').css('margin-left', '0');
-      playerOne.reset();
-      playerTwo.reset();
-      $('.announceWinner').hide();
-      $('.playerName').show();
+      $resetButton();
     });
 
 });
