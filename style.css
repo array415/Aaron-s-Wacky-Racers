@@ -1,6 +1,7 @@
 .track{
   height: 110px;
   width: 110px;
+  margin-left: 10px;
 
 }
 
@@ -15,8 +16,10 @@
   height: 100px;
   width: 100px;
   margin-top: 3%;
-  margin-right: 12px;
+  margin-left: -12px;
   background-color: black;
+  position: relative;
+  z-index: 3;
 }
 
 .resize{
@@ -50,7 +53,7 @@
 
 .row{
 
- height: 90px;
+ height: 50px;
 
 
 }
@@ -68,25 +71,45 @@
 }
 
 body{
-  background: black;
+  background: grey;
 
 }
-
-
-.testTwo{
-  background-color: red;
-  height: 30px;
-  width: 100%;
-  float: left;
-
-}
-
 
 .inner{
   margin: 15px;
 }
 
+.playerName{
+  margin-left: 30%;
+  width: 600px;
+  text-align: center;
+}
 
-.reset{
-  margin-left: 0%;
+.containerTest {
+  margin: 5%;
+  height: 75%;
+  width: 90%;
+  border: white 3px solid;
+  border-radius: 10px;
+  background-color: black;
+  overflow: hidden;
+}
+
+.car {
+  height: 60px;
+  width: 160px;
+}
+
+.testing{
+  margin-top: 15px;
+}
+
+.gameName{
+  font-family: monospace;
+  text-align: center;
+
+}
+
+.instructions{
+  text-align: center;
 }
